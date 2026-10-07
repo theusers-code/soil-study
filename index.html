@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://soil-study-green.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf2">
+    <meta name="description" content="A no-login soil science practice quiz built from your course materials.">
+    <title>Soil Study — LAT 313</title>
+    <link rel="stylesheet" href="./index_files/styles.css">
+    <link rel="stylesheet" href="./index_files/enhancements.css">
+    <link rel="stylesheet" href="./index_files/home.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="https://soil-study-green.vercel.app/" aria-label="Soil Study home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M25.5 5.5C15.4 5.7 8.1 8.9 7.2 16.1c-.5 4.3 2.5 7.5 6.4 7.1 7.7-.8 11.7-8.4 11.9-17.7Z" fill="currentColor"></path>
+            <path d="M5.5 27c3.2-6.1 7.2-10.1 13-13.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Soil Study</strong>
+          <span>A LITTLE LEARNING. EVERY DAY.</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <a class="library-link" href="https://soil-study-green.vercel.app/#course-dashboard">Your study toolkit</a>
+        <span class="offline-badge"><span></span> No account needed</span>
+        <button class="button button-quiet" id="open-import" type="button">Add question bank</button>
+      </div>
+    </header>
+
+    <main class="page-shell" id="app">
+      <section class="welcome-view" id="welcome-view" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="course-pill"><span aria-hidden="true">✦</span> LAT 313 <span class="pill-divider">/</span> SOIL SCIENCE</p>
+          <h1 id="welcome-title">Small steps.<br>Strong roots.<br><em>Big confidence.</em></h1>
+          <p class="welcome-description">
+            Turn your course notes into little wins. Pick a topic, take on a fresh
+            challenge, and watch what you know grow.
+          </p>
+          <div class="challenge-builder">
+            <div class="challenge-heading"><strong>Your next little challenge</strong><span id="set-preview">20 questions · ~16 min</span></div>
+            <div class="welcome-actions">
+              <div class="practice-settings">
+                <label for="topic-filter">Choose a topic to practise</label>
+                <select id="topic-filter" aria-describedby="bank-summary topic-note"><option value="all">All course topics</option><option value="Clay minerals">Clay minerals · 100 questions</option><option value="Soil biology">Soil biology · 100 questions</option><option value="Soil carbon practical">Soil carbon practical · 100 questions</option><option value="Soil chemistry">Soil chemistry · 100 questions</option><option value="Soil conservation">Soil conservation · 100 questions</option><option value="Soil erosion">Soil erosion · 100 questions</option><option value="Soil fertility">Soil fertility · 100 questions</option><option value="Soil fundamentals">Soil fundamentals · 100 questions</option><option value="Soil laboratory practice">Soil laboratory practice · 100 questions</option><option value="Soil management">Soil management · 100 questions</option><option value="Soil organic matter">Soil organic matter · 100 questions</option><option value="Soil physical properties">Soil physical properties · 100 questions</option><option value="Soil properties and morphology">Soil properties and morphology · 100 questions</option></select>
+              </div>
+              <button class="button button-primary button-large" id="start-quiz" type="button">
+              Let's practise
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h12m-5-5 5 5-5 5"></path>
+              </svg>
+              </button>
+            </div>
+            <p class="scoring-rule"><span class="rule-correct"><strong>+1</strong> correct</span><span class="rule-incorrect"><strong>−1</strong> incorrect</span><span class="rule-skip"><strong>0</strong> skipped</span></p>
+            <p id="bank-summary" role="status">1300 course questions · 6 objective, 4 true/false, 6 fill-in, 4 subjective per set</p>
+            <p id="topic-note" class="topic-note">A mixed set from all available course topics.</p>
+          </div>
+          <div class="source-note">
+            <span class="source-check" aria-hidden="true">✓</span>
+            <span>From your course materials. <strong>Ready when you are.</strong></span>
+          </div>
+          <p class="storage-warning" id="storage-warning" hidden=""></p>
+        </div>
+
+        <aside class="playground" aria-label="A quick practice warm-up">
+          <div class="mascot-stage">
+            <span class="stage-label">GOOD THINGS TAKE PRACTICE</span>
+            <span class="encouragement-sticker">You've<br>got this! <span aria-hidden="true">✷</span></span>
+            <svg class="sprout-art" viewBox="0 0 500 300" role="img" aria-label="A smiling plant growing from a little pot of soil">
+              <defs><lineargradient id="pot-shade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eea268"></stop><stop offset="1" stop-color="#e3874c"></stop></lineargradient></defs>
+              <ellipse cx="250" cy="273" rx="113" ry="13" fill="#aac488" opacity=".3"></ellipse>
+              <path d="M81 168C54 92 139 53 207 67M327 76c97-8 138 103 81 150" fill="none" stroke="#c2d6ac" stroke-width="2" stroke-dasharray="5 9"></path>
+              <circle cx="250" cy="153" r="106" fill="#d6e7bf"></circle>
+              <g class="sprout-character">
+                <path d="M248 184c-1-40 6-75 22-107" fill="none" stroke="#24563b" stroke-width="9" stroke-linecap="round"></path>
+                <path d="M256 127c-45 2-77-22-75-60 47-3 75 20 75 60Z" fill="#4f8b4b" stroke="#24563b" stroke-width="3"></path>
+                <path d="M262 108c2-43 37-69 78-60-4 39-30 65-78 60Z" fill="#85b957" stroke="#24563b" stroke-width="3"></path>
+                <path d="m198 83 51 39m26-26 44-31" fill="none" stroke="#24563b" stroke-width="2.5" stroke-linecap="round"></path>
+                <path d="m176 181 19 70c7 21 100 21 107 0l20-70Z" fill="url(#pot-shade)" stroke="#b56338" stroke-width="3"></path>
+                <ellipse cx="249" cy="181" rx="76" ry="18" fill="#f1b17a" stroke="#b56338" stroke-width="3"></ellipse>
+                <ellipse cx="249" cy="179" rx="64" ry="11" fill="#72513e"></ellipse>
+                <path d="M209 221v5m78-5v5" stroke="#473929" stroke-width="7" stroke-linecap="round"></path>
+                <path d="M232 232c8 11 24 11 33 0" fill="none" stroke="#473929" stroke-width="4" stroke-linecap="round"></path>
+                <ellipse cx="203" cy="238" rx="10" ry="5" fill="#cf714f" opacity=".65"></ellipse><ellipse cx="295" cy="238" rx="10" ry="5" fill="#cf714f" opacity=".65"></ellipse>
+                <path d="M185 214c-29 8-41-12-46-23m174 23c24 8 35-5 45-23" fill="none" stroke="#b56338" stroke-width="5" stroke-linecap="round"></path>
+                <path d="m140 191-10-10m10 10 2-15m215 16 10-9m-10 9-2-14" fill="none" stroke="#b56338" stroke-width="4" stroke-linecap="round"></path>
+              </g>
+              <g fill="#f1ad55"><path d="m113 79 4 12 12 4-12 4-4 12-4-12-12-4 12-4Z"></path><path d="m382 220 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z"></path></g>
+              <circle cx="354" cy="135" r="5" fill="#9b8abf"></circle><circle cx="116" cy="224" r="4" fill="#739958"></circle>
+              <path d="m106 150 10-6m270 21 12 5m-83-133 4-12" stroke="#779768" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+            <span class="plant-caption">A little wiser with every question.</span>
+          </div>
+          <div class="warmup-card">
+            <div class="warmup-topline"><span><i aria-hidden="true">✦</i> A QUICK WARM-UP</span><span>Just for fun · no score</span></div>
+            <h2 id="warmup-prompt">A soil pH of 7.0 is described as:</h2>
+            <div id="warmup-options" class="warmup-options" role="group" aria-labelledby="warmup-prompt"><button type="button" class="warmup-choice" data-choice="1">Strongly acidic</button><button type="button" class="warmup-choice" data-choice="3">Saline</button><button type="button" class="warmup-choice" data-choice="2">Alkaline</button><button type="button" class="warmup-choice" data-choice="0">Neutral</button></div>
+            <div class="warmup-bottom"><p id="warmup-feedback" role="status">Trust your roots. Take a guess!</p><button id="next-warmup" class="text-button" type="button" hidden="">One more →</button></div>
+          </div>
+        </aside>
+        <div class="welcome-benefits">
+          <div><span class="benefit-number">01</span><div><strong>A fresh mix, every time</strong><p>Different questions. Another chance to grow.</p></div></div>
+          <div><span class="benefit-number">02</span><div><strong>Learn from every answer</strong><p>Helpful explanations, even when you miss.</p></div></div>
+          <div><span class="benefit-number">03</span><div><strong>Jump straight in</strong><p>No accounts. Just you and your next little win.</p></div></div>
+        </div>
+      </section>
+
+      <section class="quiz-view" id="quiz-view" hidden="" aria-live="polite">
+        <div class="quiz-topline">
+          <button class="text-button" id="exit-quiz" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12.5 4-6 6 6 6"></path></svg>
+            Leave set
+          </button>
+          <div class="quiz-score" id="quiz-score" aria-live="polite">
+            <span>YOUR SCORE</span><strong>+0</strong>
+          </div>
+        </div>
+        <div class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="20" aria-valuenow="1">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="question-layout">
+          <aside class="question-aside">
+            <span class="question-count" id="question-count">QUESTION 01 <span>/ 20</span></span>
+            <span class="question-type" id="question-type">OBJECTIVE</span>
+            <p id="question-topic">SOIL PROPERTIES</p>
+          </aside>
+          <section class="question-panel" aria-labelledby="question-prompt">
+            <h2 id="question-prompt"></h2>
+            <div class="answer-area" id="answer-area"></div>
+            <div class="feedback" id="feedback" hidden="" aria-live="assertive"></div>
+            <div class="question-actions">
+                    <span class="marking-note" id="marking-note">Correct +1 <span>·</span> Incorrect −1</span>
+              <button class="button button-primary" id="submit-answer" type="button">Check answer</button>
+            </div>
+            <button class="text-button skip-button" id="skip-answer" type="button">Skip question · 0 points</button>
+          </section>
+        </div>
+        <p class="source-citation" id="source-citation"></p>
+      </section>
+
+      <section class="results-view" id="results-view" hidden="" aria-labelledby="results-title" aria-live="polite">
+        <p class="eyebrow"><span class="eyebrow-line"></span> SET COMPLETE</p>
+        <h1 id="results-title">Good work in the field.</h1>
+        <p class="results-summary" id="results-summary"></p>
+        <div class="results-card">
+          <div class="results-score">
+            <span>FINAL SCORE</span>
+            <strong id="final-score">+0</strong>
+            <span class="score-explainer">Correct answers add 1. Incorrect answers subtract 1.</span>
+          </div>
+          <div class="results-stats">
+            <div><strong id="correct-count">0</strong><span>Correct</span></div>
+            <div><strong id="incorrect-count">0</strong><span>To review</span></div>
+            <div><strong id="best-score">+0</strong><span>Personal best</span></div>
+            <div><strong id="skipped-count">0</strong><span>Skipped</span></div>
+          </div>
+        </div>
+        <p id="score-breakdown" class="score-breakdown"></p>
+        <p class="replay-note" id="replay-note">Your next set will use a fresh shuffle from the question bank.</p>
+        <button class="button button-primary button-large" id="replay-quiz" type="button">
+          Try a new set
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"></path></svg>
+        </button>
+        <button class="button button-quiet" id="results-home" type="button">Back to home</button>
+        <section class="answer-review" aria-labelledby="review-title">
+          <h2 id="review-title">Review your answers</h2>
+          <div id="review-list"></div>
+        </section>
+      </section>
+      <section class="course-dashboard" id="course-dashboard" aria-label="Course library and progress">
+        <div class="dashboard-heading"><div><p class="eyebrow">EVERYTHING YOU NEED TO GROW</p><h2>Your study toolkit<span aria-hidden="true">.</span></h2></div><button class="text-button" id="edit-outline" type="button">Explore the course outline ↗</button></div>
+        <div class="dashboard-grid"><div class="library-panel"><div class="library-panel-heading"><span class="toolkit-icon" aria-hidden="true">▤</span><div><h3>Good notes. Great beginnings.</h3><p class="dashboard-caption" id="library-status">6 course references · 13 topics · 1300 practice questions</p></div></div><div id="resource-list" class="resource-list"><div class="resource-row"><span class="file-kind">PPTX</span><div><strong>soil chemical properties 2022.pptx</strong><small>Course reference · curated questions in the built-in bank</small></div></div><div class="resource-row"><span class="file-kind">PPTX</span><div><strong>soil biological properties soil organisms 2022.pptx</strong><small>Course reference · curated questions in the built-in bank</small></div></div><div class="resource-row"><span class="file-kind">PPTX</span><div><strong>Soil management 2022.pptx</strong><small>Course reference · curated questions in the built-in bank</small></div></div><div class="resource-row"><span class="file-kind">PDF</span><div><strong>LAT 313 A&amp;B.pdf</strong><small>Course reference · curated questions in the built-in bank</small></div></div><div class="resource-row"><span class="file-kind">PPT</span><div><strong>SOIL_PRESENTATION_mr. hubert.ppt</strong><small>Course reference · curated questions in the built-in bank</small></div></div><div class="resource-row"><span class="file-kind">PDF</span><div><strong>SOP for Soil Organic Carbon.pdf</strong><small>Course reference · curated questions in the built-in bank</small></div></div></div></div>
+        <div class="history-panel"><span class="progress-spark" aria-hidden="true">✷</span><p class="eyebrow">YOUR GROWTH TRACKER</p><h3>Look at you grow.</h3><p class="muted">Every completed set is a step forward.</p><div class="growth-stats"><div><strong id="home-sets-completed">0</strong><span>recent sets</span></div><div><strong id="home-best-score">—</strong><span>personal best</span></div></div><div id="history-list">Your first set starts the story. Give it a try.</div><p class="progress-privacy">Saved on this browser. Always your own pace.</p></div></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Stay curious. Keep growing. <span aria-hidden="true">✦</span></span>
+      <span>SOIL STUDY <i>·</i> LAT 313 <i>·</i> MADE FOR YOUR NEXT LITTLE WIN</span>
+      <div class="creator-credit">
+        <span>Created by <strong>Pius Ohene Darko</strong></span>
+        <a href="tel:0540851637">Contact: 0540851637</a>
+      </div>
+    </footer>
+
+    <dialog class="import-dialog" id="import-dialog" aria-labelledby="import-title">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Close" value="cancel" type="submit">×</button>
+      </form>
+      <p class="eyebrow"><span class="eyebrow-line"></span> GROW THE QUESTION BANK</p>
+      <h2 id="import-title">Add a question bank</h2>
+      <p class="dialog-copy" id="import-description">Import a prepared JSON question bank for extra practice. Added questions are saved only in this browser. Lecture uploads and question generation are available in the local desktop version.</p>
+      <div id="local-resource-upload" hidden="">
+      <label class="upload-zone" for="resource-file">
+        <span class="upload-icon" aria-hidden="true">↑</span><strong>Add study resources</strong>
+        <span>PDF, PPTX, PPT, DOCX, TXT or Markdown · up to 20 MB each</span>
+        <input id="resource-file" type="file" accept=".pdf,.pptx,.ppt,.docx,.txt,.md" multiple="" disabled="">
+      </label>
+      <p class="muted">Scanned PDFs are read with OCR and may take a few minutes. Files stay on this computer.</p>
+      </div>
+      <label class="upload-zone" for="question-file">
+        <span class="upload-icon" aria-hidden="true">↑</span>
+        <strong>Choose a question bank</strong>
+        <span>Prepared JSON questions · checked against the course outline</span>
+        <input id="question-file" type="file" accept=".json,application/json">
+      </label>
+      <a class="text-button template-button" href="https://soil-study-green.vercel.app/question-bank.template.json" download="soil-study-question-template.json">
+        Download an example JSON template
+      </a>
+      <p class="import-status" id="import-status" role="status"></p>
+      <div id="draft-preview" hidden=""><h3>Review generated questions</h3><p class="muted">Check the wording and source excerpts. Untick any question you do not want to use.</p><div id="draft-list"></div><button class="button button-primary" id="publish-drafts" type="button">Add selected questions to practice</button></div>
+      <div class="format-help">
+        <strong>Question types:</strong> <code>objective</code>, <code>truefalse</code>, <code>fill</code>, or
+        <code>subjective</code>. Objective questions need choices and a correct answer; true/false questions use choices ["True", "False"] and a correctIndex of 0 or 1;
+        fill-ins need accepted answers; subjectives are checked against key terms.
+      </div>
+    </dialog>
+
+    <dialog class="import-dialog outline-dialog" id="outline-dialog" aria-labelledby="outline-title">
+      <form method="dialog"><button class="dialog-close" aria-label="Close outline" value="cancel">×</button></form>
+      <p class="eyebrow">STAY WITHIN YOUR SYLLABUS</p><h2 id="outline-title">Your course outline</h2>
+      <p class="dialog-copy" id="outline-source"></p>
+      <p class="muted" id="outline-help">These are the published course topics and keywords. Imported question banks must match this outline.</p>
+      <label for="outline-text">Topics and keywords</label><textarea id="outline-text" rows="12" class="answer-input" readonly=""></textarea>
+      <button class="button button-primary" id="save-outline" type="button" hidden="">Save outline</button><p id="outline-status" role="status"></p>
+    </dialog>
+
+    <script src="./index_files/questions.js.download"></script>
+    <script src="./index_files/soil-properties.js.download"></script>
+    <script src="./index_files/course-bank.js.download"></script>
+    <script src="./index_files/quiz-core.js.download"></script>
+    <script src="./index_files/app.js.download"></script>
+    <script src="./index_files/home.js.download"></script>
+  
+
+</body></html>

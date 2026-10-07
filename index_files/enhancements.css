@@ -1,0 +1,57 @@
+.page-shell { flex-direction: column; align-items: stretch; justify-content: flex-start; }
+.welcome-view { padding-bottom: 54px; }
+.practice-settings { margin-top: 24px; max-width: 410px; padding-top: 20px; border-top: 1px solid var(--line); }
+.practice-settings label, .outline-dialog > label { display: block; margin-bottom: 8px; font-size: 1rem; font-weight: 600; }
+.practice-settings select { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid #d7ded2; border-radius: 6px; background: var(--paper); color: var(--ink); font: inherit; font-size: 1.125rem; }
+.practice-settings p { font-size: 1rem; color: var(--muted); line-height: 1.6; }
+.scoring-rule { display: flex; gap: 10px; align-items: center; }
+.scoring-rule strong { color: var(--green); }
+.course-dashboard { width: 100%; padding: 28px 0 42px; border-top: 1px solid var(--line); }
+.dashboard-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 20px; }
+.dashboard-heading h2 { font-family: Georgia, serif; font-size: 1.9375rem; font-weight: 500; margin: 12px 0 0; }
+.dashboard-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+.dashboard-caption, .muted { font-size: 1rem; color: var(--muted); line-height: 1.6; }
+.resource-row { display: flex; gap: 13px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.resource-row > div { flex: 1; min-width: 0; }
+.resource-row strong, .resource-row small { display: block; overflow-wrap: anywhere; }
+.resource-row strong { font-size: 1.125rem; font-weight: 600; }
+.resource-row small { font-size: 1rem; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.file-kind { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 7px; background: var(--green-soft); color: var(--green); font-size: 0.875rem; font-weight: 700; flex-shrink: 0; }
+.history-panel { padding: 22px 25px; background: #eaf0e4; border-radius: 10px; align-self: start; }
+.history-panel h3 { margin-top: 0; font-family: Georgia, serif; font-weight: 500; font-size: 1.5625rem; }
+#history-list { color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.history-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid #d8e0d2; }
+.history-row strong { color: var(--green); font-size: 1.375rem; }
+.answer-review { margin-top: 35px; }
+.answer-review h2 { font-family: Georgia, serif; font-size: 1.75rem; font-weight: 500; }
+.review-row { padding: 15px 0; border-bottom: 1px solid var(--line); }
+.review-row summary { cursor: pointer; font-size: 1.125rem; line-height: 1.7; }
+.review-row p { font-size: 1.125rem; line-height: 1.65; color: var(--muted); }
+.review-row small { color: var(--muted); }
+.score-breakdown { font-size: 1rem; line-height: 1.7; color: var(--muted); }
+.results-stats { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.results-view { align-self: center; padding-bottom: 38px; }
+.skip-button { margin-top: 16px; }
+.rubric-note { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.feedback .text-button { align-self: flex-start; }
+.import-dialog { max-height: calc(100dvh - 36px); width: min(660px, calc(100% - 28px)); overflow-y: auto; }
+.draft-row { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.draft-row input { flex-shrink: 0; margin-top: 4px; accent-color: var(--green); }
+.draft-row strong, .draft-row small { display: block; font-size: 1rem; line-height: 1.65; }
+.draft-row small { margin-top: 6px; color: var(--muted); }
+#draft-list { max-height: 340px; overflow-y: auto; margin-bottom: 20px; }
+.outline-dialog textarea { width: 100%; min-height: 230px; font-size: 1.125rem; margin-bottom: 20px; line-height: 1.65; }
+.import-status { white-space: pre-wrap; overflow-wrap: anywhere; }
+button:disabled { cursor: wait; opacity: .6; }
+.answer-option input:disabled { cursor: default; }
+.question-panel h2:focus, .results-view h1:focus { outline: none; }
+@media (max-width: 700px) {
+  .dashboard-grid { grid-template-columns: 1fr; gap: 25px; }
+  .dashboard-heading { align-items: flex-start; flex-direction: column; }
+  .welcome-view { padding-bottom: 35px; }
+  .practice-settings { max-width: none; }
+  .resource-row { gap: 9px; }
+  .resource-row strong { font-size: 1rem; }
+  .history-panel { padding: 20px; }
+  .results-view > .button { margin-bottom: 10px; }
+}
